@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Menu from './components/Menu';
 import NavBar from './components/NavBar';
@@ -18,7 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
-        <Menu />
+        <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <NavBar />
           <Wrapper>
