@@ -21,9 +21,12 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   flex: 1;
-  background-color: #202020;
+  background-color: ${({ theme }) => theme.bg};
   height: 100vh;
-  color: white;
+  color: ${({ theme }) => theme.text};
+  font-size: 14px;
+  position: sticky;
+  top: 0;
 `;
 
 const Wrapper = styled.div`
@@ -47,11 +50,27 @@ const Item = styled.div`
   align-items: center;
   gap: 20px;
   cursor: pointer;
+  padding: 7.5px 0px;
 `;
 
 const Hr = styled.hr`
   margin: 15px 0px;
-  border: 0.5px solid ${({ theme }) => theme.soft};
+  border: 0.5px solid ${(theme) => theme.soft};
+`;
+
+const Login = styled.div``;
+const Button = styled.button`
+  padding: 5px 15px;
+  background-color: transparent;
+  border: 1px solid #3ea6ff;
+  color: #3ea6ff;
+  border-radius: 3px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 `;
 
 const Menu = () => {
@@ -74,6 +93,7 @@ const Menu = () => {
           <SubscriptionsOutlinedIcon />
           Subscriptions
         </Item>
+        <Hr />
         <Item>
           <VideoLibraryOutlinedIcon />
           Library
@@ -82,6 +102,15 @@ const Menu = () => {
           <HistoryOutlinedIcon />
           History
         </Item>
+        <Hr />
+        <Login>
+          Sign in to like videos, comments, and subscribe.
+          <Button>
+            <AccountCircleOutlinedIcon />
+            SIGN IN
+          </Button>
+          <Hr />
+        </Login>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
@@ -118,6 +147,10 @@ const Menu = () => {
         <Item>
           <HelpOutlineOutlinedIcon />
           Help
+        </Item>
+        <Item>
+          <SettingsBrightnessOutlinedIcon />
+          LightMode
         </Item>
       </Wrapper>
     </Container>
