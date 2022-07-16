@@ -73,6 +73,12 @@ const Button = styled.button`
   gap: 5px;
 `;
 
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+`;
+
 const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
@@ -109,8 +115,9 @@ const Menu = ({ darkMode, setDarkMode }) => {
             <AccountCircleOutlinedIcon />
             SIGN IN
           </Button>
-          <Hr />
         </Login>
+        <Hr />
+        <Title>Best of YenTube</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
